@@ -1,3 +1,13 @@
 # DictionaryDjango
-Installation
-git clone https://github.com/thntranhongnhung/DictionaryDjango.git
+
+Dictionary Web By Python Django
+===================
+Contain the Report tool for automatically querying results.
+
+Environment Installation 
+-------------------
+Open terminal
+    git clone https://github.com/thntranhongnhung/DictionaryDjango.git
+    
+
+Start Service
