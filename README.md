@@ -1,4 +1,6 @@
-# DictionaryWebByPythonDjango
+
+
+Dictionary Web By Python Django
 ===================
 Contain the Report tool for automatically querying results.
 
