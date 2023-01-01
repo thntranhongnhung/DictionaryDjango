@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html>
-
-<body>
-
-<h1>{{ vocabulary.word }} </h1>
-  
+{% extends "master.html"%}
+{% block title %}
+Detail vocabulary
+  {% endblock %}
+  {% block content%}
+  <h1>{{ vocabulary.word }} </h1>
 <p>Description: {{ vocabulary.des }}</p>
 <p>Example: {{ vocabulary.example }}</p>
 
 <p>Back to <a href="/vocabulary">Home</a></p>
 
-</body>
-</html>
+{% endblock %}

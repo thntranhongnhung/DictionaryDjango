@@ -1,9 +1,15 @@
-<!DOCTYPE html>
-<html>
-<body>
+{% extends "master.html" %}
 
-<h1>Hello World!</h1>
-<p>Welcome to my first Django project!</p>
+{% block title %}
+  Dictionary
+{% endblock %}
 
-</body>
-</html>
+
+{% block content %}
+  <h1>Dictionary Online</h1>
+
+  <h3>Function</h3>
+  
+  <p>All vocabulary <a href="vocabulary/">click</a></p>
+  
+{% endblock %}

@@ -1,16 +1,17 @@
-<!DOCTYPE html>
-<html>
-<body>
+{% extends "master.html" %}
 
+{% block title %}
+Vocabulary - Dictionary Online
+{% endblock %}
+
+{% block content %}
+<p><a href="/home">Home</a></p>
 <h1>All vocabulary</h1>
-  
 <ul>
   {% for x in vocabulary %}
-    <h1>{{ x.word }}</h1>
-    <li> {{ x.des }} </li>
-   <li><a href="details/{{ x.id }}">Detail</a></li>
+  <h1>{{ x.word }}</h1>
+  <li> {{ x.des }} </li>
+  <li><a href="details/{{ x.id }}">Detail</a></li>
   {% endfor %}
 </ul>
-
-</body>
-</html>
+{% endblock %}

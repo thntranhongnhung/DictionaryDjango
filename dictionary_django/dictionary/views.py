@@ -17,3 +17,14 @@ def details(request,id):
         'vocabulary' : idvocabulary
     }
     return HttpResponse(template.render(context,request))
+
+def home(request):
+    template = loader.get_template('home.html')
+    return HttpResponse(template.render())
+
+def testing(request):
+    template= loader.get_template('template.html')
+    context ={ 
+        'fruits':['influenced','describe','medicine'],
+    }
+    return HttpResponse(template.render(context,request))
