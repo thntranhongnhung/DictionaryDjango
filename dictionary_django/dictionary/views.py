@@ -23,8 +23,9 @@ def home(request):
     return HttpResponse(template.render())
 
 def testing(request):
+    voca = dictionary.objects.all().values()
     template= loader.get_template('template.html')
     context ={ 
-        'fruits':['influenced','describe','medicine'],
+        'vocabulary':voca,
     }
     return HttpResponse(template.render(context,request))

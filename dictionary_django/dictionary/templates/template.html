@@ -2,11 +2,19 @@
 <html>
 <body>
 
-{% for x in fruits %}
-  <h1>{{ x }}</h1>
+{% for x in vocabulary %}
+  <h1>{{ x.word }}</h1>
 {% endfor %}
 
-<p>In views.py you can see what the fruits variable looks like.</p>
-
+{% if greeting == 1 %}
+  <h1>Hello</h1>
+{% else %}
+  <h1>Bye</h1>
+{% endif %}
+<ul>
+  {% for x in mymembers %}
+    <li>{{ x.firstname }}</li>
+  {% endfor %}
+</ul>
 </body>
 </html>
