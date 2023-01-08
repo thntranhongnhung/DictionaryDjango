@@ -24,7 +24,7 @@ PROJECT_ROOT = os.path.normpath(os.path.dirname(__file__))
 SECRET_KEY = 'django-insecure-y$jlr$c)wh$a%omoi@du$l-w@zvodv0*40_hj5&q5fish&(33-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'dictionary_django.urls'
@@ -121,6 +122,9 @@ STATIC_URL = '/static/'
 
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS =[
+    BASE_DIR/'mystaticfile'
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

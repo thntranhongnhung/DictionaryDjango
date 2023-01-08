@@ -23,7 +23,7 @@ def home(request):
     return HttpResponse(template.render())
 
 def testing(request):
-    voca = dictionary.objects.all().values()
+    voca = dictionary.objects.all().order_by('word').values()
     template= loader.get_template('template.html')
     context ={ 
         'vocabulary':voca,

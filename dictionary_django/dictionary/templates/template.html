@@ -1,20 +1,27 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
+  <link rel="stylesheet" href="{% static 'mystyle.css' %}">
 <body>
-
+<table>
+  <tr>
+<th>Word</th>
+<th>Description</th>
+<th>Example</th> 
+</tr>
 {% for x in vocabulary %}
-  <h1>{{ x.word }}</h1>
-{% endfor %}
+<tr>
 
-{% if greeting == 1 %}
-  <h1>Hello</h1>
-{% else %}
-  <h1>Bye</h1>
-{% endif %}
-<ul>
-  {% for x in mymembers %}
-    <li>{{ x.firstname }}</li>
-  {% endfor %}
-</ul>
+  {% comment "this is count reserve" %}
+  <li>{{ forloop.revcounter }}</li>
+  {% endcomment %}
+ <td> {{ x.word }} {#write by rosa#}</td>
+ <td>{{ x.des }}</td>
+ <td>{{ x.example }}</td>
+  {% empty %}
+  <li>not have vocabulary to load</li>
+{% endfor %}
+</table>
+{% include 'footer.html' with days=' 7.1'%}
 </body>
 </html>
