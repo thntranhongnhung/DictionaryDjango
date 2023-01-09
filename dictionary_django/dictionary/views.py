@@ -10,8 +10,8 @@ def vocabulary(request):
     }
     return HttpResponse(template.render(context,request))
 
-def details(request,id):
-    idvocabulary= dictionary.objects.get(id=id)
+def details(request,word):
+    idvocabulary= dictionary.objects.get(word=word)
     template = loader.get_template('details.html')
     context ={
         'vocabulary' : idvocabulary

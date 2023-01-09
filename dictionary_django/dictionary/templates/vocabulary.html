@@ -5,14 +5,16 @@ Vocabulary - Dictionary Online
 {% endblock %}
 
 {% block content %}
-<p><a href="/home">Home</a></p>
+<p><a href="/home">Return</a></p>
 <div class="vocabulary"> 
 <h1>All vocabulary</h1>
 <ul>
   {% for x in vocabulary %}
   <h1>{{ x.word }}</h1>
   <li> {{ x.des }} </li>
-  <li><a href="details/{{ x.id }}">Detail</a></li>
+
+  <li onclick="window.location = 'details/{{ x.word }}'">Detail {{ x.word }}</li>
+     
   {% endfor %}
 </ul>
 </div>

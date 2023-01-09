@@ -24,7 +24,7 @@ PROJECT_ROOT = os.path.normpath(os.path.dirname(__file__))
 SECRET_KEY = 'django-insecure-y$jlr$c)wh$a%omoi@du$l-w@zvodv0*40_hj5&q5fish&(33-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+   
 ]
 
 ROOT_URLCONF = 'dictionary_django.urls'
@@ -78,8 +78,13 @@ WSGI_APPLICATION = 'dictionary_django.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR,  'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'masteruser', 
+        'PASSWORD': 'Asdqwezxc',
+        'HOST':'db-django-dictionary.cqr99lx0bars.ap-northeast-1.rds.amazonaws.com',
+        'PORT':'5432'
+
     }
 }
 
