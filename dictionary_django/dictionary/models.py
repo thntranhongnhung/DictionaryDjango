@@ -9,3 +9,8 @@ class dictionary(models.Model):
     def __str__(self):
         return f"{self.word} "
  
+
+class Layout(models.Model):
+    name = models.CharField(max_length=50)
+    image = models.ImageField('img', upload_to='../upload_to')
+
