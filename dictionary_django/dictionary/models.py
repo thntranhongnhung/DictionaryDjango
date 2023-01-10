@@ -10,8 +10,6 @@ class dictionary(models.Model):
         return f"{self.word} "
  
 class Layout(models.Model):
+    name = models.CharField(max_length=50)
     image = models.ImageField('img', upload_to='../upload_to')
 
-layout = Layout()
-layout.image = "../upload_to/image.png"
-layout.save()
