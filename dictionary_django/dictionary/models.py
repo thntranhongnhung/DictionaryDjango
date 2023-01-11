@@ -12,5 +12,9 @@ class dictionary(models.Model):
 
 class Layout(models.Model):
     name = models.CharField(max_length=50)
-    image = models.ImageField('img', upload_to='../upload_to')
+    image = models.ImageField(upload_to="gallery",null=True, blank=True)
+    def __str__(self):
+        return f"{self.name} "
+    def get_img_url(self):
+        return self.image.url
 

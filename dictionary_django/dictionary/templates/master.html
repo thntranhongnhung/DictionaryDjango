@@ -4,19 +4,26 @@
 <head>
   <link rel="stylesheet" href="{% static 'mystyle.css' %}">
   <title>{% block title %}{% endblock %}</title>
-
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 </head>
 <body>
-<div class="topnav">
-
-
-  <img src="../../upload_to/image.png" alt="Rosa_Dictionary" width="42" height="42" style="vertical-align:top" >
-
-  <a href="/home">HOME</a>
+  <div class="topnav" style="background-color: #ffccdd">
+    <a class="logo_link" href="/home">
+    <img class="logo" src="{% static 'images/imagesss.png' %}" title="Go back to the home page" width="42" height="42" style="vertical-align:top" />
+    Rosa
+  </a>
+  <div class="input-group rounded">
+    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+  
+      <i class="fas fa-search" aria-hidden="true" style='font-size:24px'></i>
 
   </div>
-{% block content %}
-{% endblock %}
 
+    </div>
+
+{% block content %}
+
+{% endblock %}
 </body>
 </html>
