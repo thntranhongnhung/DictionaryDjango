@@ -1,29 +1,35 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
+
 <head>
   <link rel="stylesheet" href="{% static 'mystyle.css' %}">
-  <title>{% block title %}{% endblock %}</title>
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
 </head>
+
 <body>
   <div class="topnav" style="background-color: #ffccdd">
-    <a class="logo_link" href="/home">
-    <img class="logo" src="{% static 'images/imagesss.png' %}" title="Go back to the home page" width="42" height="42" style="vertical-align:top" />
-    Rosa
-  </a>
-  <div class="input-group rounded">
-    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-  
-      <i class="fas fa-search" aria-hidden="true" style='font-size:24px'></i>
+   
 
+      <a class="logo_link" href="/home">
+        <img class="logo" src="{% static 'images/imagesss.png' %}" title="Go back to the home page" width="42"
+          height="42" style="vertical-align:top" />
+        Rosa
+      </a>
+
+
+      <div class="input-group rounded "">
+        <input type=" search" class="form-control rounded" placeholder="Search" aria-label="Search"
+        aria-describedby="search-addon" />
+
+      <i class="fas fa-search fa-fw fa-lg"></i>
   </div>
+</div>
+  {% block content %}
 
-    </div>
-
-{% block content %}
-
-{% endblock %}
+  {% endblock %}
 </body>
+
 </html>
