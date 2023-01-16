@@ -12,6 +12,10 @@
   <h3>Function</h3>
   
   <p>All vocabulary <a href="vocabulary/">click</a></p>
-  
+  <form class="search-form" method="POST" action="{% url 'search'%}" >
+{% csrf_token %}
+    <input class="add_your_class" type="search" name="search"> 
+    <button class="btn" type="submit"> Search </button>
+</form>
 </div>
 {% endblock %}

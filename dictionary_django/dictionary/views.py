@@ -5,6 +5,10 @@ from django.shortcuts import render,redirect
 from dictionary.models import Layout 
 from django.views.generic.list import ListView
 from newspaper import Article
+from django.views.decorators.csrf import csrf_exempt
+
+
+
 def vocabulary(request):
     allvocabulary = dictionary.objects.all().values()
     template = loader.get_template('vocabulary.html')
@@ -33,18 +37,19 @@ def testing(request):
     }
     return HttpResponse(template.render(context,request))
 
-class SearchView(ListView):
-    model = Article
-    template_name = 'search.html'
-    context_object_name = 'all_search_results'
+@csrf_exempt
+def search(request):
+    if request.method == "POST":
+        search = request.POST['search']
+        wordSearch = dictionary.objects.filter(word__contains=search)
+        return render(request,
+        'search.html',
+        {'search':search,
+        'wordSearch':wordSearch})
+    else:
+        return render(request,
+        'search.html',
+        {})       
 
-    def get_queryset(self):
-       result = super(SearchView, self).get_queryset()
-       query = self.request.GET.get('search')
-       if query:
-          postresult = Article.objects.filter(title__contains=query)
-          result = postresult
-       else:
-           result = None
-       return result
+    
    
