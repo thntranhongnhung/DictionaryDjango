@@ -13,7 +13,7 @@ Vocabulary - Dictionary Online
   <h1>{{ x.word }}</h1>
   <li> {{ x.des }} </li>
 
-  <li onclick="window.location = 'details/{{ x.word }}'">Detail {{ x.word }}</li>
+  <li onclick="window.location = 'details/{{ x.slug }}'">Detail {{ x.word }}</li>
      
   {% endfor %}
 </ul>

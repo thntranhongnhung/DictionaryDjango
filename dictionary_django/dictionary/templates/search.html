@@ -7,7 +7,7 @@ Detail about {{vocabulary.word }}
 {% block content%}
 <div class="mysearch">
     {% if search %}
-    <h1> {{ search }}</h1>
+    <h1> Your search: {{ search }}</h1>
     {% else %}
     <h1> empty</h1>
     {% endif %}
@@ -16,11 +16,12 @@ Detail about {{vocabulary.word }}
 
 
  
-    <a href="{% url 'details' wordOriganal %}">
-    <h1>{{ wordOriganal }}</h1>
+    <a href="{% url 'details' wordOriganal.slug %}">
+    <h1> {{ wordOriganal }}</h1>
     {% empty %}
     <h1>not have vocabulary to load</h1>
     {% endfor %}
-    <p>Back to <a href="/home/vocabulary">Vocabulary</a></p>
+ 
 </div>
 {% endblock %}
+

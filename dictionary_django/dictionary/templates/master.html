@@ -19,30 +19,16 @@
         height="42" style="vertical-align:top" />
 
     </a>
+    <form class="search-form" method="POST" action="{% url 'search'%}" >
+      {% csrf_token %}
+          <input class="search-input" type="search" name="search"> 
+          <button class="btn" type="submit"> Search </button>
+      </form>
 
-
-    <form class="search-form" action="" style="position:relative">
-      <div class="ui selection dropdown custom-select-label-container" title="Select your dictionary" tabindex="0">
-        <span class="text res_hos">English</span>
-        <i class="fas fa-caret-down dropdown-icon" aria-hidden="true"></i>
-
-        <!-- <div class="menu custom-select-menu" tabindex="-1">
-          <a class="item active selected" data-value="english" data-placeholder="English">English</a>
-          <a class="item" data-value="english-japanese" data-placeholder="English - Japanese">English - Japanese</a>
-          <a class="item" data-value="english-korean" data-placeholder="English - Korean">English - Korean</a>
-          <a class="item" data-value="english-spanish" data-placeholder="English - Spanish">English - Spanish</a>
-          <a class="item" data-value="japanese-english" data-placeholder="Japanese - English">Japanese - English</a>
-          <a class="item" data-value="spanish-english" data-placeholder="Spanish - English">Spanish - English</a>
-        </div> -->
-        </div>
-        <button type="submit" class="csl"><i class="fas fa-search fa-fw fa-lg"></i></button>
-        <div class="search-input-container"><input class="search_input" type="search" name="q" autocomplete="off"
-            placeholder="English">
-          <div class="inputSuggestions" style="display: none;"></div>
-        </div>
-     
-    </form>
-
+    
+        
+</form>
+        
 
     
   </div>
@@ -50,6 +36,7 @@
 
   {% block content %}
 
+  
   {% endblock %}
 </body>
 
