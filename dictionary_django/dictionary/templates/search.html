@@ -1,4 +1,5 @@
 {% extends "master.html"%}
+{% load python_code %}
 {% block title %}
 Detail about {{vocabulary.word }}
 {% endblock %}
@@ -10,9 +11,13 @@ Detail about {{vocabulary.word }}
     {% else %}
     <h1> empty</h1>
     {% endif %}
-    {% for word in wordSearch%}
-    <a href="{% url 'details' word.id %}">
-    <h1>{{ word }}</h1>
+
+    {% for wordOriganal in wordSearch%}
+
+
+ 
+    <a href="{% url 'details' wordOriganal %}">
+    <h1>{{ wordOriganal }}</h1>
     {% empty %}
     <h1>not have vocabulary to load</h1>
     {% endfor %}

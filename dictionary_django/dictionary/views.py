@@ -42,6 +42,7 @@ def search(request):
     if request.method == "POST":
         search = request.POST['search']
         wordSearch = dictionary.objects.filter(word__contains=search)
+       
         return render(request,
         'search.html',
         {'search':search,
