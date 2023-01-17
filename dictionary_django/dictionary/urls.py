@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 from dictionary import views
 urlpatterns = [
      path('testing/', views.testing, name='testing'),
+        path('', views.home, name='home'),
     path('home/', views.home, name='home'),
     path('home/vocabulary/', views.vocabulary, name='vocabulary'),
     path('home/vocabulary/details/<slug:slug>', views.details, name='details'),
