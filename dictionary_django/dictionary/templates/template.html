@@ -4,27 +4,18 @@
 <link rel="stylesheet" href="{% static 'mystyle.css' %}">
 
 <body>
-  <div class=header>
+  <div class=header style="background-color: #ffccdd">
     <a class="logo_link" href="https://www.ldoceonline.com/">
       <img class="logo" src="{% static 'images/logodictionary.png' %}" title="Go back to the home page" width="42"
         height="42" style="vertical-align:top" />
     </a>
-    <form action="https://www.ldoceonline.com/search/" class="search_form" style="position:relative;">
-      <div class="ui selection dropdown custom-select-label-container" title="Select your dictionary">
-        <span class="text res_hos">English</span>
-        <i class="fas fa-caret-down dropdown-icon" aria-hidden="true"></i>
-        <div class="menu custom-select-menu">
-          <a class="item" data-value="english" data-placeholder="English">English</a>
-          <a class="item" data-value="english-japanese" data-placeholder="English - Japanese">English - Japanese</a>
-          <a class="item" data-value="english-korean" data-placeholder="English - Korean">English - Korean</a>
-          <a class="item" data-value="english-spanish" data-placeholder="English - Spanish">English - Spanish</a>
-          <a class="item" data-value="japanese-english" data-placeholder="Japanese - English">Japanese - English</a>
-          <a class="item" data-value="spanish-english" data-placeholder="Spanish - English">Spanish - English</a>
-        </div>
-      </div>
-      <button type="submit" class="csl"><i class="fas fa-search fa-fw fa-lg"></i></button>
+
+    <form class="search-form" method="POST" action="{% url 'search'%}">
+
+
+
       <select class="search_dictionary_selector custom-select">
-        <option value="english" selected="selected" data-label="English" data-placeholder="English">
+        <option value="vietnam-english" selected="selected" data-label="VietNam-English" data-placeholder="VietNam-English">
           English
         </option>
         <option value="english-japanese" data-label="English - Japanese" data-placeholder="English - Japanese">
@@ -43,21 +34,14 @@
           Spanish - English
         </option>
       </select>
-      <div class="search-input-container"><input class="search_input" type="search" name="q" /></div>
+
+      {% csrf_token %}
+      <input class="search-input" type="search" name="search">
+      <button class="btn" type="submit"> Search </button>
     </form>
-    <div class="header_version">
-      <div class="version_selector">
-        <div class="ui dropdown">
-          <i class="fas fa-globe-americas"></i>
-          <span class="text">English</span>
-          <div class="menu">
-            <a class="item" href="https://www.ldoceonline.com/jp/">日本語</a>
-            <a class="item" href="https://www.ldoceonline.com/es-LA/">Español latino</a>
-            <a class="item" href="https://www.ldoceonline.com/ko/">한국어</a>
-          </div>
-        </div>
-      </div>
-    </div>
+
+
+
   </div>
   <!-- <table>
   <tr>
