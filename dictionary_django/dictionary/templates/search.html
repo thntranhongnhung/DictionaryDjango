@@ -1,5 +1,5 @@
 {% extends "master.html"%}
-{% load python_code %}
+
 {% block title %}
 Detail about {{vocabulary.word }}
 {% endblock %}
@@ -8,19 +8,20 @@ Detail about {{vocabulary.word }}
 <div class="mysearch">
     {% if search %}
     <h1> Your search: {{ search }}</h1>
-    {% else %}
-    <h1> empty</h1>
-    {% endif %}
-
+    <h1> Your language: {{ language }}</h1>
     {% for wordOriganal in wordSearch%}
-
-
- 
+  
     <a href="{% url 'details' wordOriganal.slug %}">
+     
     <h1> {{ wordOriganal }}</h1>
     {% empty %}
     <h1>not have vocabulary to load</h1>
     {% endfor %}
+    {% else %}
+    <h1> empty</h1>
+    {% endif %}
+
+   
  
 </div>
 {% endblock %}

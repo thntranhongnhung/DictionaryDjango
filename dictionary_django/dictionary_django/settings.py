@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dictionary',
     'fontawesomefree',
-    
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -70,10 +70,7 @@ TEMPLATES = [
                 
                 
             ],
-             'libraries':{
-            'python_code': 'dictionary.templatetags.python_code',
-            
-            }
+           
         },
     },
 ]
@@ -86,12 +83,9 @@ WSGI_APPLICATION = 'dictionary_django.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'masteruser', 
-        'PASSWORD': 'Asdqwezxc',
-        'HOST':'db-django-dictionary.cqr99lx0bars.ap-northeast-1.rds.amazonaws.com',
-        'PORT':'5432'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+        
 
     }
 }

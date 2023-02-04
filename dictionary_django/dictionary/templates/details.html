@@ -5,10 +5,11 @@ Detail about {{vocabulary.word }}
 
   {% block content%}
   <div class="myword">
-  <h1>{{ vocabulary.word }} </h1>
-<p>Description: {{ vocabulary.des }}</p>
-<p>Example: {{ vocabulary.example }}</p>
-
-
+    {% for wordOriganal in vocabulary%}
+  <h1>{{ wordOriganal.word }} </h1>
+<p>Description: {{ wordOriganal.des }}</p>
+<p>Example: {{ wordOriganal.example }}</p>
+<p>Language: {{ wordOriganal.language }}</p>
+{% endfor %}
 </div>
 {% endblock %}

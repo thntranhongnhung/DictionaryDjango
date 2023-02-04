@@ -7,37 +7,98 @@
   <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
   <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
   <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-  <div class="topnav" style="background-color: #ffccdd">
+
+
+  <div class="row">
+    <div class="col-lg-12 card-margin">
+      <a class="center" href="home/">Home</a>x
+      <div class="card search-form">
+       
+        <div class="card-body p-0">
+         
+          <form id="search-form" class="search-form" method="POST" action="{% url 'search'%}">
+           
+            <div class="row">
+              <div class="col-12">
+                <div class="row no-gutters">
+                  <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+
+                    <select class="form-control" name="option_language"
+                      id="option_language">
+                      <option value="english" data-label="VietNam-English"
+                        data-placeholder="VietNam - English">
+                        VietNam - English
+                      </option>
+                      <option value="japanese" data-label="VietNam - Japanese"
+                        data-placeholder="VietNam - Japanese">
+                        VietNam - Japanese
+                      </option>
+                      <option value="korean" data-label="VietNam - Korean"  >
+                        VietNam - Korean
+                      </option>
+                      <option value="spanish" data-label="VietNam - Spanish" 
+                        data-placeholder="VietNam - Spanish">
+                        VietNam - Spanish
+                      </option>
+                      <option value="chinese" data-label="VietNam - Chinese"
+                        data-placeholder="VietNam - Chinese">
+                        VietNam - Chinese
+                      </option>
+                      <option value="russian" data-label="VietNam - Russian" 
+                        data-placeholder="VietNam - Russian">
+                        VietNam - Russian
+                      </option>
+                    </select>
+
+                  </div>
+
+                  <div class="col-lg-8 col-md-8 col-sm-12 p-0">
+
+                    <input class="search-input" type="search" name="search_text" id="search_text"
+                      placeholder="VietNam - English">
+                  </div>
+                  
+                  <div class="col-lg-1 col-md-1 col-sm-12 p-0">
+
+                    <button><i class="fas fa-search fa-fw fa-lg"></i></button>
 
 
 
-    <a class="logo_link" href="/home">
-      <img class="logo" src="{% static 'images/logodictionary.png' %}" title="Go back to the home page" width="42"
-        height="42" style="vertical-align:top" />
 
-    </a>
-    <form class="search-form" method="POST" action="{% url 'search'%}" >
-      {% csrf_token %}
-          <input class="search-input" type="search" name="search"> 
-          <button class="btn" type="submit"> Search </button>
-      </form>
-
-    
-        
-</form>
-        
-
-    
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% csrf_token %}
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
+
+
+
+
+
+
 
 
   {% block content %}
 
-  
+
   {% endblock %}
 </body>
+<script src="{% static 'mystyle.js' %}"></script>
 
 </html>
